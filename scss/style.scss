@@ -1,0 +1,558 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --font-family: "Montserrat", sans-serif;
+    --second-family: "Roboto", sans-serif;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: #000;
+    color: #fff;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+[class*="__container"] {
+    max-width: 1430px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.header {
+    padding: 20px 0;
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__logo {
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        img {
+            width: 120px; // Размер логотипа
+        }
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 7%;
+        left: calc(30% + 10px);
+        transform: translateY(-50%);
+        width: 107px;
+        height: 89px;
+        background-image: url(../img/triangle.svg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        transform: translateY(-52%) rotate(-25deg);
+    }
+
+}
+
+.menu {
+    display: flex;
+    margin-left: auto;
+    margin-right: 5vh;
+
+
+    .menu__list {
+        display: flex;
+        gap: 20px;
+
+        a {
+            text-decoration: none;
+            font-family: var(--font-family);
+            font-size: 16px;
+            color: #fff;
+
+            &:hover {
+                color: #0ecfff;
+            }
+        }
+    }
+}
+
+.menu-icon {
+    display: block;
+    cursor: pointer;
+    position: absolute;
+    top: 20px; // Расположение в верхней части
+    right: 15vh; // Расположение в правой части
+    z-index: 1000;
+
+    span {
+        display: block;
+        width: 40px; // Длина верхней полоски
+        height: 3px;
+        margin: 5px 0;
+        background-color: #33E3FF;
+        transition: 0.3s;
+        position: relative;
+        box-shadow: 0 2px 31px 0 rgba(255, 255, 255, 0.66);
+
+
+    }
+
+    span:nth-child(1) {
+        width: 50px;
+    }
+
+    span:nth-child(2) {
+        width: 30px;
+    }
+
+    &.active {
+
+
+        span:nth-child(1) {
+            transform: rotate(0deg) translateY(10px);
+        }
+
+
+        span:nth-child(2) {
+            width: 3px;
+            height: 30px;
+            transform: rotate(90deg) translateX(-20px);
+            margin: 0;
+        }
+
+
+    }
+}
+
+
+.overlay {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 300px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    transition: 0.3s;
+    z-index: 999;
+
+    .overlay__list {
+        margin-top: 28vh;
+        gap: 10px;
+        padding: 0;
+        text-align: center;
+        display: grid;
+
+        li {
+            margin: 20px 0;
+
+            a {
+                text-decoration: none;
+                color: #fff;
+                font-size: 18px;
+                font-family: var(--font-family);
+
+                &:hover {
+                    color: #0ecfff;
+                }
+            }
+        }
+    }
+
+
+
+    &.active {
+        right: 0;
+    }
+}
+
+// MAIN 
+.main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: clamp(100px, 10vw, 175px) clamp(50px, 5vw, 100px);
+
+    &__content {
+        max-width: 600px;
+    }
+
+    .circle {
+        display: inline-block;
+        width: 55px;
+        height: 55px;
+        background: linear-gradient(80deg, #0ecfff 0%, #69209e 100%);
+        background: url('/img/oval.svg') no-repeat center/contain;
+        margin-left: 10px;
+        vertical-align: middle;
+        position: relative;
+        right: -65vh;
+        top: -20vh;
+        left: 56vh;
+
+    }
+
+    &__text h1 {
+        max-width: 493px;
+        font-weight: 900;
+        font-size: 56px;
+        line-height: 135%;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        text-shadow: 0 4px 37px 0 rgba(255, 255, 255, 0.25);
+    }
+
+    &__text p {
+        max-width: 492px;
+        font-family: var(--second-family);
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 126%;
+        letter-spacing: 0.14em;
+        margin-bottom: 54px;
+    }
+
+    &__buttons {
+        display: flex;
+        gap: 20px;
+
+        .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 15px 30px;
+            font-size: 16px;
+            font-family: "Montserrat", sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            border-radius: 5px;
+            transition: all 0.3s;
+
+            svg {
+                width: 20px;
+                height: 20px;
+                stroke: currentColor;
+                transition: stroke 0.3s;
+            }
+
+            &.primary {
+                max-width: 240px;
+                background-color: #24E2FF;
+                color: #000;
+                border-radius: 0 1px 20px 0;
+
+                &:hover {
+                    background-color: #1CAFD1;
+                    color: #fff;
+                }
+            }
+
+            &.secondary {
+                background: transparent;
+                color: #24E2FF;
+                border: 2px solid #24E2FF;
+
+                &:hover {
+                    background-color: #24E2FF;
+                    color: #000;
+                }
+            }
+        }
+    }
+
+    .button.secondary {
+        display: inline-flex; // Для выравнивания текста и иконки
+        align-items: center;
+        gap: 10px; // Расстояние между иконкой и текстом
+        color: var(--primary-color);
+        background: transparent;
+        border: none;
+        transition: color 0.3s;
+
+        svg {
+            flex-shrink: 0;
+            stroke: var(--primary-color); // Цвет стрелки
+
+            transition: stroke 0.3s; // Анимация для стрелки
+        }
+
+        &:hover {
+            color: #000; // Меняем цвет текста при наведении
+
+            svg {
+                stroke: #000; // Меняем цвет стрелки при наведении
+            }
+        }
+    }
+
+
+
+
+    &__info {
+        width: 442px;
+        height: 136px;
+        backdrop-filter: blur(15.41884708404541px);
+        box-shadow: 0 4px 43px 0 rgba(0, 0, 0, 0.25);
+        background: linear-gradient(119deg, rgba(255, 255, 255, 0.07) 0%, rgba(255, 250, 250, -0.93) 61.65%);
+        display: flex;
+        gap: 40px;
+        margin-top: clamp(50px, 10vw, 100px);
+        padding: clamp(20px, 5vw, 45px);
+        text-align: center;
+        opacity: 1;
+        transform: translateY(50px);
+        transition: opacity 0.6s ease, transform 0.6s ease;
+
+        &.fade-out {
+            opacity: 0;
+        }
+
+        &.fade-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        svg {
+            position: absolute;
+            left: 20px;
+        }
+
+        /* Добавил выравнивание содержимого и адаптивность */
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+
+        /* Добавил ховер-анимацию для интерактивности */
+        &:hover {
+            box-shadow: 0 6px 50px 0 rgba(0, 0, 0, 0.3);
+            transform: translateY(45px);
+        }
+    }
+
+    &__spec p {
+        font-weight: 600;
+        font-size: 21px;
+        text-transform: uppercase;
+        line-height: 135%;
+        letter-spacing: 0.09em;
+        margin-bottom: 7px;
+        color: #fff;
+        /* Добавил белый цвет для контраста */
+    }
+
+    &__spec span {
+        font-weight: 600;
+        font-size: clamp(8px, 2vw + 1rem, 11px);
+        line-height: 135%;
+        letter-spacing: 0.09em;
+        color: #32e3ff;
+        transition: color 0.3s ease;
+
+        &:hover {
+            color: #28a8cc;
+            /* Изменение цвета на ховер */
+        }
+    }
+
+}
+
+.car {
+    &__image {
+        position: relative;
+
+        img {
+            width: 100%;
+            display: block;
+            transition: transform ease-in-out;
+
+            &:hover {
+                transform: scale(1.05);
+            }
+        }
+
+
+    }
+}
+
+.main__switcher {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 10rem;
+    width: 442px;
+    height: 136px;
+    backdrop-filter: blur(15.41884708404541px);
+    box-shadow: 0 4px 43px 0 rgba(0, 0, 0, 0.25);
+    background: linear-gradient(119deg, rgba(255, 255, 255, 0.07) 0%, rgba(255, 250, 250, 0.07) 94.65%);
+
+    .switcher__button {
+        background: transparent;
+        color: rgba(255, 255, 255, 0.8);
+        padding: 0.75rem 1.5rem;
+        border: none;
+        font-size: 1rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        position: relative;
+
+
+
+        &::after {
+            content: "";
+            position: absolute;
+            right: -5px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 2px;
+            height: 100%;
+            background: #fff;
+        }
+
+        &:hover {
+            // transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        &:last-child::after {
+            display: none;
+
+        }
+
+        &.active {
+            color: #32e3ff;
+            font-weight: bold;
+        }
+    }
+}
+
+.main__line {
+    margin: -60px;
+    margin-bottom: -6px;
+    text-align: center;
+    margin-right: -41vh;
+}
+
+.main__rectangle {
+    position: absolute;
+    right: 0;
+    left: 112vh;
+    top: 10px;
+}
+
+.main__svg {
+    width: 150px;
+    height: 150px;
+    margin: 20px 0;
+
+    svg {
+        width: 100%;
+        height: 100%;
+
+        path {
+
+            fill: none;
+            stroke-width: 2;
+            stroke-dasharray: 300;
+            stroke-dashoffset: 300;
+            animation: dash ease-in-out forwards;
+
+            &:hover {
+                stroke: lighten(red, 20%);
+            }
+        }
+    }
+}
+
+@keyframes dash {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+
+
+
+.car__vector {
+    position: absolute;
+    top: 300px;
+    left: 83%;
+    transform: translateX(-50%);
+    z-index: -1;
+    /* чтобы SVG было на заднем плане */
+
+    transition: opacity 0.3s ease;
+}
+
+.car__image {
+    position: relative;
+}
+
+.car__image img {
+    width: 732px;
+    height: 299px;
+
+}
+
+
+
+.car__gradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(131deg,
+            #29e2ff 0%,
+            #6e6ec9 38.2%,
+            #936efb 50.83%,
+            #7b59dc 59.97%,
+            #1c006c 98.23%);
+    mix-blend-mode: overlay; // Наложение градиента на изображение
+    z-index: 2; // Поверх изображения
+    pointer-events: none; // Чтобы градиент не блокировал клики
+}
+
+.car__shadow {
+    position: absolute;
+    /* top: 0; */
+    left: 0;
+    width: 95%;
+    height: 34%;
+    background: linear-gradient(131deg, #29e2ff 0%, #6e6ec9 38.2%, #936efb 50.83%, #7b59dc 59.97%, #1c006c 98.23%);
+    mix-blend-mode: overlay;
+    z-index: 2;
+    pointer-events: none;
+}
+
+
+
+
+
+.main__image img {
+    max-width: 100%;
+    height: auto;
+}
+
+.divider {
+    position: absolute;
+    top: 0;
+    bottom: -220px;
+    left: 50%;
+    width: 1px;
+    background-color: #aaa;
+    opacity: 0.5;
+}
