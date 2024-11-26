@@ -7,18 +7,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Открытие/закрытие оверлея
     burger.addEventListener('click', () => {
-        burger.classList.toggle('active'); // Изменяем состояние бургер-меню
-        overlay.classList.toggle('active'); // Показываем/скрываем оверлей
-        menu.classList.toggle('active'); // Переключаем навигацию
+        burger.classList.toggle('active');
+        overlay.classList.toggle('active');
+        menu.classList.toggle('active');
     });
 });
-
-
-
-
-
-
-
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -124,6 +117,7 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
 
+
     function animateNumber(element, start, end, duration) {
         let current = start;
         const increment = (end - start) / (duration / 20);
@@ -186,6 +180,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     });
+
 });
 
 

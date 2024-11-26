@@ -45,7 +45,7 @@ a {
         gap: 10px;
 
         img {
-            width: 120px; // Размер логотипа
+            width: 120px;
         }
     }
 
@@ -92,13 +92,13 @@ a {
     display: block;
     cursor: pointer;
     position: absolute;
-    top: 20px; // Расположение в верхней части
-    right: 15vh; // Расположение в правой части
+    top: 20px;
+    right: 15vh;
     z-index: 1000;
 
     span {
         display: block;
-        width: 40px; // Длина верхней полоски
+        width: 40px;
         height: 3px;
         margin: 5px 0;
         background-color: #33E3FF;
@@ -273,9 +273,9 @@ a {
     }
 
     .button.secondary {
-        display: inline-flex; // Для выравнивания текста и иконки
+        display: inline-flex;
         align-items: center;
-        gap: 10px; // Расстояние между иконкой и текстом
+        gap: 10px;
         color: var(--primary-color);
         background: transparent;
         border: none;
@@ -283,16 +283,16 @@ a {
 
         svg {
             flex-shrink: 0;
-            stroke: var(--primary-color); // Цвет стрелки
+            stroke: var(--primary-color);
 
-            transition: stroke 0.3s; // Анимация для стрелки
+            transition: stroke 0.3s;
         }
 
         &:hover {
-            color: #000; // Меняем цвет текста при наведении
+            color: #000;
 
             svg {
-                stroke: #000; // Меняем цвет стрелки при наведении
+                stroke: #000;
             }
         }
     }
@@ -329,12 +329,12 @@ a {
             left: 20px;
         }
 
-        /* Добавил выравнивание содержимого и адаптивность */
+
         justify-content: center;
         align-items: center;
         flex-wrap: wrap;
 
-        /* Добавил ховер-анимацию для интерактивности */
+
         &:hover {
             box-shadow: 0 6px 50px 0 rgba(0, 0, 0, 0.3);
             transform: translateY(45px);
@@ -349,7 +349,7 @@ a {
         letter-spacing: 0.09em;
         margin-bottom: 7px;
         color: #fff;
-        /* Добавил белый цвет для контраста */
+
     }
 
     &__spec span {
@@ -362,7 +362,7 @@ a {
 
         &:hover {
             color: #28a8cc;
-            /* Изменение цвета на ховер */
+
         }
     }
 
@@ -424,7 +424,7 @@ a {
         }
 
         &:hover {
-            // transform: translateY(-5px);
+
             background: rgba(255, 255, 255, 0.1);
         }
 
@@ -493,7 +493,7 @@ a {
     left: 83%;
     transform: translateX(-50%);
     z-index: -1;
-    /* чтобы SVG было на заднем плане */
+
 
     transition: opacity 0.3s ease;
 }
@@ -521,9 +521,9 @@ a {
             #936efb 50.83%,
             #7b59dc 59.97%,
             #1c006c 98.23%);
-    mix-blend-mode: overlay; // Наложение градиента на изображение
-    z-index: 2; // Поверх изображения
-    pointer-events: none; // Чтобы градиент не блокировал клики
+    mix-blend-mode: overlay;
+    z-index: 2;
+    pointer-events: none;
 }
 
 .car__shadow {

@@ -1,4 +1,3 @@
-@charset "UTF-8";
 * {
   margin: 0;
   padding: 0;
@@ -264,11 +263,9 @@ a {
   opacity: 1;
   transform: translateY(50px);
   transition: opacity 0.6s ease, transform 0.6s ease;
-  /* Добавил выравнивание содержимого и адаптивность */
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  /* Добавил ховер-анимацию для интерактивности */
 }
 .main__info.fade-out {
   opacity: 0;
@@ -293,7 +290,6 @@ a {
   letter-spacing: 0.09em;
   margin-bottom: 7px;
   color: #fff;
-  /* Добавил белый цвет для контраста */
 }
 .main__spec span {
   font-weight: 600;
@@ -305,7 +301,6 @@ a {
 }
 .main__spec span:hover {
   color: #28a8cc;
-  /* Изменение цвета на ховер */
 }
 
 .car__image {
@@ -411,7 +406,6 @@ a {
   left: 83%;
   transform: translateX(-50%);
   z-index: -1;
-  /* чтобы SVG было на заднем плане */
   transition: opacity 0.3s ease;
 }
 
